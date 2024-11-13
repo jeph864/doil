@@ -38,9 +38,9 @@ function doil_check_sudo() {
 # return 255 if one port isn't free
 # return 0 if both ports are free
 function doil_check_ports() {
-  lsof -i:80 -P -n | grep LISTEN > /dev/null 2>&1
+  lsof -i:9080 -P -n | grep LISTEN > /dev/null 2>&1
   P80=$?
-  lsof -i:443 -P -n | grep LISTEN > /dev/null 2>&1
+  lsof -i:9443 -P -n | grep LISTEN > /dev/null 2>&1
   P443=$?
 	if [[ "${P80}" -eq 1 && "${P443}" -eq 1 ]]
 	then
